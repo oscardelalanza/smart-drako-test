@@ -45,7 +45,18 @@ class PlacesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should update place' do
-    patch place_url(@place), params: { place: { city: @place.city, country: @place.country, ext_num: @place.ext_num, int_num: @place.int_num, name: @place.name, pc: @place.pc, street: @place.street, suburb: @place.suburb, user_id: @place.user_id } }
+    patch place_url(@place), params: {
+      place: {
+        city: @place.city,
+        country: @place.country,
+        ext_num: @place.ext_num,
+        int_num: @place.int_num,
+        name: @place.name,
+        pc: @place.pc,
+        street: @place.street,
+        suburb: @place.suburb
+      }
+    }
     assert_redirected_to place_url(@place)
   end
 
