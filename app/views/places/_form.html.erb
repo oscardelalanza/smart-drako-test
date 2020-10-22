@@ -1,62 +1,59 @@
-<%= form_with(model: place, local: true) do |form| %>
-  <% if place.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(place.errors.count, "error") %> prohibited this place from being saved:</h2>
+<div class="card col-lg-6 mr-auto ml-auto p-lg-4">
+  <%= form_with(model: place, local: true) do |form| %>
+    <% if place.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(place.errors.count, "error") %> prohibited this place from being saved:</h2>
 
-      <ul>
-        <% place.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% place.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field form-group">
+      <%= form.label :name, "Nombre de la sucursal" %>
+      <%= form.text_field :name, class: "form-control" %>
+    </div>
+
+    <div class="field form-group">
+      <%= form.label :street, "Calle" %>
+      <%= form.text_field :street, class: "form-control" %>
+    </div>
+
+    <div class="field form-group">
+      <%= form.label :suburb, "Colonia" %>
+      <%= form.text_field :suburb, class: "form-control" %>
+    </div>
+
+    <div class="field form-group">
+      <%= form.label :ext_num, "Numero exterior" %>
+      <%= form.number_field :ext_num, class: "form-control" %>
+    </div>
+
+    <div class="field form-group">
+      <%= form.label :int_num, "Numero interior" %>
+      <%= form.number_field :int_num, class: "form-control" %>
+    </div>
+
+    <div class="field form-group">
+      <%= form.label :pc, "Codigo Postal" %>
+      <%= form.number_field :pc, class: "form-control" %>
+    </div>
+
+    <div class="field form-group">
+      <%= form.label :city, "Ciudad" %>
+      <%= form.text_field :city, class: "form-control" %>
+    </div>
+
+    <div class="field form-group">
+      <%= form.label :country, "Pais" %>
+      <%= form.text_field :country, class: "form-control" %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit "Guardar", class: "btn btn-success btn-block" %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :street %>
-    <%= form.text_field :street %>
-  </div>
-
-  <div class="field">
-    <%= form.label :suburb %>
-    <%= form.text_field :suburb %>
-  </div>
-
-  <div class="field">
-    <%= form.label :ext_num %>
-    <%= form.number_field :ext_num %>
-  </div>
-
-  <div class="field">
-    <%= form.label :int_num %>
-    <%= form.number_field :int_num %>
-  </div>
-
-  <div class="field">
-    <%= form.label :pc %>
-    <%= form.number_field :pc %>
-  </div>
-
-  <div class="field">
-    <%= form.label :city %>
-    <%= form.text_field :city %>
-  </div>
-
-  <div class="field">
-    <%= form.label :country %>
-    <%= form.text_field :country %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

@@ -9,7 +9,6 @@ class CreatePlaces < ActiveRecord::Migration[6.0]
       t.integer :pc
       t.string :city
       t.string :country
-      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
