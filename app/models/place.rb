@@ -1,4 +1,5 @@
 class Place < ApplicationRecord
+  has_many :employees
   validates :name, presence: true
   validates :ext_num, numericality: { only_integer: true }
   validates :int_num, numericality: { only_integer: true }
