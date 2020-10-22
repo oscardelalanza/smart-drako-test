@@ -14,6 +14,7 @@ class EmployeesController < ApplicationController
 
   # GET /employees/new
   def new
+    @places = Place.all.map { |place| [place.name, place.id] }
     @employee = Employee.new
   end
 

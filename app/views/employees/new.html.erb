@@ -1,5 +1,9 @@
-<h1>New Employee</h1>
+<h1 class="text-center mt-lg-4">New Employee</h1>
 
-<%= render 'form', employee: @employee %>
+<div class="container mt-lg-2">
+  <%= render 'form', employee: @employee %>
 
-<%= link_to 'Back', employees_path %>
+  <div class="col-lg-6 ml-auto mr-auto mt-lg-3">
+    <%= link_to 'Back', root_path %>
+  </div>
+</div>

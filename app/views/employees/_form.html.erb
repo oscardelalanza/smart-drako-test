@@ -1,37 +1,37 @@
-<%= form_with(model: employee, local: true) do |form| %>
-  <% if employee.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
+<div class="card col-lg-6 mr-auto ml-auto p-lg-4">
+  <%= form_with(model: employee, local: true) do |form| %>
+    <% if employee.errors.any? %>
+      <div id="error_explanation" class="alert alert-danger">
+        <ul>
+          <% employee.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-      <ul>
-        <% employee.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+    <div class="field form-group">
+      <%= form.label :name %>
+      <%= form.text_field :name, class: "form-control" %>
+    </div>
+
+    <div class="field form-group">
+      <%= form.label :rfc %>
+      <%= form.text_field :rfc, class: "form-control" %>
+    </div>
+
+    <div class="field form-group">
+      <%= form.label :job %>
+      <%= form.text_field :job, class: "form-control" %>
+    </div>
+
+    <div class="field form-group">
+      <%= form.label :place_id %>
+      <%= form.select :place_id, Place.all.map { |place| [place.name, place.id] }, include_blank: "Seleccionar Suc." %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit "Guardar", class: "btn btn-success btn-block" %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :rfc %>
-    <%= form.text_field :rfc %>
-  </div>
-
-  <div class="field">
-    <%= form.label :job %>
-    <%= form.text_field :job %>
-  </div>
-
-  <div class="field">
-    <%= form.label :place_id %>
-    <%= form.text_field :place_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
