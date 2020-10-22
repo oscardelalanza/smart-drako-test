@@ -1,0 +1,57 @@
+<div class="card col-lg-6 mr-auto ml-auto p-lg-4">
+  <%= form_with(model: place, local: true) do |form| %>
+    <% if place.errors.any? %>
+      <div id="error_explanation" class="alert alert-danger">
+        <ul>
+          <% place.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field form-group">
+      <%= form.label :name, "Nombre de la sucursal" %>
+      <%= form.text_field :name, class: "form-control" %>
+    </div>
+
+    <div class="field form-group">
+      <%= form.label :street, "Calle" %>
+      <%= form.text_field :street, class: "form-control" %>
+    </div>
+
+    <div class="field form-group">
+      <%= form.label :suburb, "Colonia" %>
+      <%= form.text_field :suburb, class: "form-control" %>
+    </div>
+
+    <div class="field form-group">
+      <%= form.label :ext_num, "Numero exterior" %>
+      <%= form.number_field :ext_num, class: "form-control" %>
+    </div>
+
+    <div class="field form-group">
+      <%= form.label :int_num, "Numero interior" %>
+      <%= form.number_field :int_num, class: "form-control" %>
+    </div>
+
+    <div class="field form-group">
+      <%= form.label :pc, "Codigo Postal" %>
+      <%= form.number_field :pc, class: "form-control" %>
+    </div>
+
+    <div class="field form-group">
+      <%= form.label :city, "Ciudad" %>
+      <%= form.text_field :city, class: "form-control" %>
+    </div>
+
+    <div class="field form-group">
+      <%= form.label :country, "Pais" %>
+      <%= form.text_field :country, class: "form-control" %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit "Guardar", class: "btn btn-success btn-block" %>
+    </div>
+  <% end %>
+</div>

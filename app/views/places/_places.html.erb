@@ -1,0 +1,33 @@
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Street</th>
+    <th>Suburb</th>
+    <th>Ext num</th>
+    <th>Int num</th>
+    <th>Pc</th>
+    <th>City</th>
+    <th>Country</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @places.each do |place| %>
+    <tr>
+      <td><%= place.name %></td>
+      <td><%= place.street %></td>
+      <td><%= place.suburb %></td>
+      <td><%= place.ext_num %></td>
+      <td><%= place.int_num %></td>
+      <td><%= place.pc %></td>
+      <td><%= place.city %></td>
+      <td><%= place.country %></td>
+      <td><%= link_to 'Show', place %></td>
+      <td><%= link_to 'Edit', edit_place_path(place) %></td>
+      <td><%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
