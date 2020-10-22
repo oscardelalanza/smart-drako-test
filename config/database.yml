@@ -11,11 +11,10 @@
 #
 default: &default
   adapter: postgresql
-  encoding: utf8mb4
+  encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: <%= ENV['MYSQL_USER'] %>
   password: <%= ENV['MYSQL_PASSWORD'] %>
-  socket: /var/run/mysqld/mysqld.sock
 
 development:
   <<: *default
