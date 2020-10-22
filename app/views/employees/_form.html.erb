@@ -1,0 +1,37 @@
+<div class="card col-lg-6 mr-auto ml-auto p-lg-4">
+  <%= form_with(model: employee, local: true) do |form| %>
+    <% if employee.errors.any? %>
+      <div id="error_explanation" class="alert alert-danger">
+        <ul>
+          <% employee.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field form-group">
+      <%= form.label :name %>
+      <%= form.text_field :name, class: "form-control" %>
+    </div>
+
+    <div class="field form-group">
+      <%= form.label :rfc %>
+      <%= form.text_field :rfc, class: "form-control", readonly: @edit ? true : false %>
+    </div>
+
+    <div class="field form-group">
+      <%= form.label :job %>
+      <%= form.text_field :job, class: "form-control" %>
+    </div>
+
+    <div class="field form-group">
+      <%= form.label :place_id %>
+      <%= form.select :place_id, Place.all.map { |place| [place.name, place.id] }, include_blank: "Seleccionar Suc." %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit "Guardar", class: "btn btn-success btn-block" %>
+    </div>
+  <% end %>
+</div>

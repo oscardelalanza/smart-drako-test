@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_22_014730) do
+ActiveRecord::Schema.define(version: 2020_10_22_061453) do
+
+  create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
+    t.string "rfc"
+    t.string "job"
+    t.bigint "place_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["place_id"], name: "index_employees_on_place_id"
+  end
 
   create_table "places", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
@@ -41,4 +51,5 @@ ActiveRecord::Schema.define(version: 2020_10_22_014730) do
     t.index ["rfc"], name: "index_users_on_rfc", unique: true
   end
 
+  add_foreign_key "employees", "places"
 end
