@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Sucursales</h1>
+
+<div class="mb-lg-3">
+  <%= link_to 'Registrar Sucursal', new_place_path, class: "btn btn-success" %>
+  <%= link_to_if @places.count.positive?, 'Registrar Empleado', root_path, class: "btn btn-primary" %>
+</div>
+
+<%= render_places %>
+<br>
