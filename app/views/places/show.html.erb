@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @place.name %>
+</p>
+
+<p>
+  <strong>Street:</strong>
+  <%= @place.street %>
+</p>
+
+<p>
+  <strong>Suburb:</strong>
+  <%= @place.suburb %>
+</p>
+
+<p>
+  <strong>Ext num:</strong>
+  <%= @place.ext_num %>
+</p>
+
+<p>
+  <strong>Int num:</strong>
+  <%= @place.int_num %>
+</p>
+
+<p>
+  <strong>Pc:</strong>
+  <%= @place.pc %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @place.city %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @place.country %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @place.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_place_path(@place) %> |
+<%= link_to 'Back', places_path %>
