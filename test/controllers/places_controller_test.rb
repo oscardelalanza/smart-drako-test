@@ -17,7 +17,18 @@ class PlacesControllerTest < ActionDispatch::IntegrationTest
 
   test 'should create place' do
     assert_difference('Place.count') do
-      post places_url, params: { place: { city: @place.city, country: @place.country, ext_num: @place.ext_num, int_num: @place.int_num, name: @place.name, pc: @place.pc, street: @place.street, suburb: @place.suburb, user_id: @place.user_id } }
+      post places_url, params: {
+        place: {
+          city: @place.city,
+          country: @place.country,
+          ext_num: @place.ext_num,
+          int_num: @place.int_num,
+          name: @place.name,
+          pc: @place.pc,
+          street: @place.street,
+          suburb: @place.suburb
+        }
+      }
     end
 
     assert_redirected_to place_url(Place.last)
