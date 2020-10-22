@@ -3,7 +3,7 @@ module PlacesHelper
     if @places.count.positive?
       render 'places/places'
     else
-      render html: "<p>No hay sucursales registradas<p/>".html_safe
+      render html: '<p>No hay sucursales registradas<p/>'.html_safe
     end
   end
 end
