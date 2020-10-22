@@ -9,7 +9,9 @@ class PlacesController < ApplicationController
 
   # GET /places/1
   # GET /places/1.json
-  def show; end
+  def show
+    @employees = @place.employees
+  end
 
   # GET /places/new
   def new

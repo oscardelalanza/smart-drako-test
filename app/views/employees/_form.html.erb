@@ -17,7 +17,7 @@
 
     <div class="field form-group">
       <%= form.label :rfc %>
-      <%= form.text_field :rfc, class: "form-control" %>
+      <%= form.text_field :rfc, class: "form-control", readonly: @edit ? true : false %>
     </div>
 
     <div class="field form-group">
