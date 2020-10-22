@@ -1,44 +1,47 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Sucursal:</strong>
   <%= @place.name %>
 </p>
 
 <p>
-  <strong>Street:</strong>
+  <strong>Calle:</strong>
   <%= @place.street %>
 </p>
 
 <p>
-  <strong>Suburb:</strong>
+  <strong>Colonia:</strong>
   <%= @place.suburb %>
 </p>
 
 <p>
-  <strong>Ext num:</strong>
+  <strong>Numero Ext:</strong>
   <%= @place.ext_num %>
 </p>
 
 <p>
-  <strong>Int num:</strong>
+  <strong>Numero Int:</strong>
   <%= @place.int_num %>
 </p>
 
 <p>
-  <strong>Pc:</strong>
+  <strong>Codigo Postal:</strong>
   <%= @place.pc %>
 </p>
 
 <p>
-  <strong>City:</strong>
+  <strong>Ciudad:</strong>
   <%= @place.city %>
 </p>
 
 <p>
-  <strong>Country:</strong>
+  <strong>Pais:</strong>
   <%= @place.country %>
 </p>
 
+
 <%= link_to 'Edit', edit_place_path(@place) %> |
 <%= link_to 'Back', places_path %>
+
+<%= render 'employees/employees' %>

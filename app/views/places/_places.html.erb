@@ -1,14 +1,15 @@
-<table>
+<table class="table">
   <thead>
   <tr>
-    <th>Name</th>
-    <th>Street</th>
-    <th>Suburb</th>
-    <th>Ext num</th>
-    <th>Int num</th>
-    <th>Pc</th>
-    <th>City</th>
-    <th>Country</th>
+    <th>Nombre</th>
+    <th>Calle</th>
+    <th>Colonia</th>
+    <th>Num Ext</th>
+    <th>Num Int</th>
+    <th>Codigo Postal</th>
+    <th>Ciudad</th>
+    <th>Pais</th>
+    <th>Empleados</th>
     <th colspan="3"></th>
   </tr>
   </thead>
@@ -24,6 +25,7 @@
       <td><%= place.pc %></td>
       <td><%= place.city %></td>
       <td><%= place.country %></td>
+      <td><%= place.employees.count %></td>
       <td><%= link_to 'Show', place %></td>
       <td><%= link_to 'Edit', edit_place_path(place) %></td>
       <td><%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %></td>
